@@ -1,7 +1,7 @@
 name: wake-on-lan
 description: >-
-  Wake on LAN balenablock.
-fleetcta: Wake your devices over LAN
+  Wake on LAN balenablock for controlling power state of local devices.
+fleetcta: Wake your devices over LAN!
 version: 0.0.1
 type: sw.application
 assets:
