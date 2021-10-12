@@ -1,18 +1,18 @@
-name: template
+name: wake-on-lan
 description: >-
-  Template block enabling you to get started building balenablocks for your projects and fleets.
-fleetcta: Template balenablock
+  Wake on LAN balenablock.
+fleetcta: Wake your devices over LAN
 version: 0.0.1
 type: sw.application
 assets:
   repository:
     type: blob.asset
     data:
-      url: "https://github.com/balenablocks/template"
+      url: "https://github.com/bucknalla/wol-block"
   logo:
     type: blob.asset
     data:
-      url: "https://raw.githubusercontent.com/balenablocks/template/main/docs/images/icon.png"
+      url: "https://raw.githubusercontent.com/bucknalla/wol-block/master/docs/images/icon.png"
 data:
   defaultDeviceType: raspberrypi3
   supportedDeviceTypes:
