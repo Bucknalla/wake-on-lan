@@ -1,30 +1,26 @@
-const swaggerAutogen = require('swagger-autogen')()
+const swaggerAutogen = require("swagger-autogen")();
 
-const outputFile = 'swagger.json'
-const endpointsFiles = ['lib/index.js']
-
-const fs = require("fs");
+const outputFile = "swagger.json";
+const endpointsFiles = ["lib/index.js"];
 
 let version, doc;
+
 try {
-    version = fs.readFileSync('VERSION', 'utf8') || "0.0.1";
-}
-catch (error) {
-    version = '0.0.1';
-}
-finally {
-    doc = {
-        info: {
-            version: version,
-            title: "My balenaBlock",
-            description: "Documentation automatically generated for your express-based balenaBlock.",
-            license: {
-                name: "Apache 2.0",
-                url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-            }
-        }
-    }
+  version = process.env.npm_package_version || "0.0.2";
+} catch (error) {
+  version = "0.0.2";
+} finally {
+  doc = {
+    info: {
+      version: version,
+      title: process.env.npm_package_name,
+      description: process.env.npm_package_description,
+      license: {
+        name: process.env.npm_package_license,
+        url: "http://www.apache.org/licenses/LICENSE-2.0.html",
+      },
+    },
+  };
 }
 
-
-swaggerAutogen(outputFile, endpointsFiles, doc)
+swaggerAutogen(outputFile, endpointsFiles, doc);

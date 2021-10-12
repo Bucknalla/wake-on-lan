@@ -2,10 +2,10 @@
   "swagger": "2.0",
   "info": {
     "version": "0.0.1",
-    "title": "My balenaBlock",
-    "description": "Documentation automatically generated for your express-based balenaBlock.",
+    "title": "wol-block",
+    "description": "Wake on LAN balenablock for waking up devices on network",
     "license": {
-      "name": "Apache 2.0",
+      "name": "Apache-2.0",
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
@@ -18,12 +18,169 @@
   "consumes": [],
   "produces": [],
   "paths": {
-    "/": {
+    "/wake/mac": {
+      "post": {
+        "tags": [],
+        "description": "Wake device via MAC Address.",
+        "parameters": [
+          {
+            "name": "mac",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "list": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "example": "array"
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "List of items"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/wake/uuid": {
+      "post": {
+        "tags": [],
+        "description": "Wake device via UUID.",
+        "parameters": [
+          {
+            "name": "mac",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "list": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "example": "array"
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "List of items"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/mac": {
       "get": {
         "tags": [],
-        "description": "Documentation for your endpoint.",
-        "parameters": [],
-        "responses": {}
+        "description": "Get all MAC addresses for devices in fleet",
+        "parameters": [
+          {
+            "name": "mac",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "properties": {
+                  "type": "object",
+                  "properties": {
+                    "list": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "example": "array"
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "List of MAC Addresses"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
       }
     }
   },

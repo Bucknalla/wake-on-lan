@@ -1,11 +1,12 @@
 {
-  "name": "balenablock-template",
+  "name": "wol-block",
   "version": "0.0.1",
-  "description": "Template for building/testing/publishing balenablocks",
+  "description": "Wake on LAN balenablock for waking up devices on network",
   "main": "lib/index.js",
   "scripts": {
-    "start": "node lib/index.js",
+    "start": "npm run docs && node lib/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "balena-lint lib/ && echo \"Done!\"",
     "docs": "node scripts/swagger.js"
   },
   "repository": {
@@ -22,8 +23,14 @@
   },
   "homepage": "https://github.com/balena-io-playground/balenablock-template#readme",
   "dependencies": {
+    "balena-sdk": "^15.53.0",
     "express": "^4.17.1",
+    "swagger-autogen": "^2.6.3",
     "swagger-ui-express": "^4.1.6",
-    "swagger-autogen": "^2.6.3"
+    "wol": "^1.0.7"
+  },
+  "devDependencies": {
+    "@balena/lint": "^6.1.1",
+    "prettier": "2.4.1"
   }
 }

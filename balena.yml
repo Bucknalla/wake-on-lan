@@ -8,11 +8,11 @@ assets:
   repository:
     type: blob.asset
     data:
-      url: 'https://github.com/balenablocks/template'
+      url: "https://github.com/balenablocks/template"
   logo:
     type: blob.asset
     data:
-      url: 'https://raw.githubusercontent.com/balenablocks/template/main/docs/images/icon.png'
+      url: "https://raw.githubusercontent.com/balenablocks/template/main/docs/images/icon.png"
 data:
   defaultDeviceType: raspberrypi3
   supportedDeviceTypes:
