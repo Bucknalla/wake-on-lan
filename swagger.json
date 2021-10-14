@@ -20,16 +20,19 @@
   "paths": {
     "/wake/mac": {
       "post": {
-        "tags": [],
+        "tags": [
+          "Wake"
+        ],
         "description": "Wake device via MAC Address.",
         "parameters": [
           {
-            "name": "mac",
+            "name": "uuid",
             "in": "query",
+            "description": "Device UUID",
             "type": "string"
           },
           {
-            "name": "uuid",
+            "name": "mac",
             "in": "query",
             "type": "string"
           }
@@ -75,16 +78,19 @@
     },
     "/wake/uuid": {
       "post": {
-        "tags": [],
+        "tags": [
+          "Wake"
+        ],
         "description": "Wake device via UUID.",
         "parameters": [
           {
-            "name": "mac",
+            "name": "uuid",
             "in": "query",
+            "description": "Device UUID",
             "type": "string"
           },
           {
-            "name": "uuid",
+            "name": "mac",
             "in": "query",
             "type": "string"
           }
@@ -130,16 +136,19 @@
     },
     "/mac": {
       "get": {
-        "tags": [],
+        "tags": [
+          "MAC"
+        ],
         "description": "Get all MAC addresses for devices in fleet",
         "parameters": [
           {
-            "name": "mac",
+            "name": "uuid",
             "in": "query",
+            "description": "Device UUID",
             "type": "string"
           },
           {
-            "name": "uuid",
+            "name": "mac",
             "in": "query",
             "type": "string"
           }

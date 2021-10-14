@@ -1,4 +1,4 @@
-# balenablock-template
+![logo](https://raw.githubusercontent.com/bucknalla/wake-on-lan/master/docs/images/icon.png)
 
 **Template block enabling you to get started building balenablocks for your projects and fleets**
 
@@ -19,14 +19,21 @@ Or add the following service to your `docker-compose.yml`:
 ```yaml
 version: "2.1"
 services:
-  template:
+  wake-on-lan:
     restart: always
-    image: ghcr.io/balena-io-playground/balenablock-template:latest
-    ports:
-      - "80:3000"
+    image: ghcr.io/bucknalla/wol-block:latest
+    network_mode: host
+    # ports:
+    #   - "80:3000"
+    labels:
+      io.balena.features.supervisor-api: 1
+      io.balena.features.balena-api: 1
+    environment:
+      - "DEBUG=main,endpoints"
+      - "PORT=3000"
 ```
 
-> If you want to use a webserver exposing a public facing page, you will need to remove the exposed port 80
+> If you want to use the generated API docs, uncomment port 80
 
 ## Documentation
 
